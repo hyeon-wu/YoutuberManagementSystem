@@ -1,5 +1,5 @@
 
-public class HelloWorld{
+public class MenuManager{
 	public static void main(String[]args) {
 		System.out.println("*** Youtuber Management System Menu ***");
 		System.out.println(" 1. Add Youtuber");
