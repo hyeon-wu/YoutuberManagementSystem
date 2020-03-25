@@ -26,6 +26,9 @@ public class MenuManager{
 			else if(num==4) {
 				viewYoutuber();
 			}
+			else {
+				continue;
+			}
 		}
 	}
 	public static void addYoutuber() {
