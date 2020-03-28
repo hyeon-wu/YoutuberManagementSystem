@@ -45,17 +45,17 @@ public class MenuManager{
 	public static void deleteYoutuber() {
 		Scanner input=new Scanner(System.in);
 		System.out.print("Youtuber ID:");
-		String youtubername=input.next();
+		String youtuberID=input.next();
 	}
 	public static void editYoutuber() {
 		Scanner input=new Scanner(System.in);
 		System.out.print("Youtuber ID:");
-		String youtubername=input.next();
+		String youtuberID=input.next();
 	}
 	public static void viewYoutuber() {
 		Scanner input=new Scanner(System.in);
 		System.out.print("Youtuber ID:");
-		String youtubername=input.next();
+		String youtuberID=input.next();
 	}
 }
 
