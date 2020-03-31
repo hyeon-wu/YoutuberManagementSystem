@@ -21,6 +21,6 @@ public class Youtuber {
 	}
 	
 	public void printInfo() {
-		System.out.println("name:"+name+"id:"+id+"kind:"+"link:"+link);
+		System.out.println("name:"+name+"id:"+id+"kind:"+kind+"link:"+link);
 	}
 }
