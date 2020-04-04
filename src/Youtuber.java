@@ -8,15 +8,11 @@ public class Youtuber {
 	
 	public Youtuber() {
 	}
-	
-	public Youtuber(String name, int id) {
-		this.name=name;
-		this.id=id;
-	}
+
 	public Youtuber(String name, int id, String kind, String link) {
 		this.name=name;
 		this.id=id;
-		this.kind=kind;
+		this.kind=kind; 
 		this.link=link;
 	}
 	
