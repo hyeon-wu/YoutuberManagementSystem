@@ -18,7 +18,7 @@ public class Youtuber {
 		this.subscribernum=subscribernum; 
 		this.link=link;
 	}
-	
+
 	public YoutuberKind getKind() {
 		return kind;
 	}
@@ -63,20 +63,20 @@ public class Youtuber {
 	public void printInfo() {
 		System.out.println("name:"+name+"id:"+id+"subscriber num:"+subscribernum+"link:"+link);
 	}
-	
+
 	public void getUserInput(Scanner input) {
 		System.out.print("Youtuber ID:");
 		int id=input.nextInt();
 		this.setId(id);
-		
+
 		System.out.print("Youtuber name:");
 		String name=input.next();
 		this.setName(name);
-		
+
 		System.out.print("Youtuber Subscriber number :");
 		int subscribernum=input.nextInt();
 		this.setSubscribernum(subscribernum);
-		
+
 		System.out.print("Youtuber Link:");
 		String link=input.next();
 		this.setLink(link);
