@@ -1,8 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Youtuber.GameYoutuber;
 import Youtuber.MusicYoutuber;
+import Youtuber.TravelYoutuber;
+import Youtuber.VlogYoutuber;
 import Youtuber.Youtuber;
+import Youtuber.YoutuberKind;
 
 public class YoutuberManager {
 	ArrayList<Youtuber> youtubers=new ArrayList<Youtuber>();
@@ -14,25 +18,41 @@ public class YoutuberManager {
 	public void addYoutuber() {
 		int kind=0;
 		Youtuber youtuber;
-		while(kind!=1&&kind!=2) {
+		while(kind!=1&&kind!=2&&kind!=3&&kind!=4) {
 			System.out.println("1 for Vlog");
 			System.out.println("2 for Music");
+			System.out.println("3 for Game");
+			System.out.println("4 for Travel");
 			System.out.println("Select num for Youtuber Kind between 1 and 2 : ");
 			kind=input.nextInt();
 			if(kind==1) {
-				youtuber=new Youtuber();
+				youtuber=new VlogYoutuber(YoutuberKind.Vlog);
 				youtuber.getUserInput(input);
 				youtubers.add(youtuber);
 				break;
 			}
 			else if(kind==2) {
-				youtuber=new MusicYoutuber();
+				youtuber=new MusicYoutuber(YoutuberKind.Music);
+				youtuber.getUserInput(input);
+				youtubers.add(youtuber);
+				break;
+			}
+			
+			else if(kind==3) {
+				youtuber=new GameYoutuber(YoutuberKind.Game);
+				youtuber.getUserInput(input);
+				youtubers.add(youtuber);
+				break;
+			}
+			
+			else if(kind==4) {
+				youtuber=new TravelYoutuber(YoutuberKind.Travel);
 				youtuber.getUserInput(input);
 				youtubers.add(youtuber);
 				break;
 			}
 			else {
-				System.out.print("Select num for Youtuber Kind between 1 and 2 : ");
+				System.out.print("Select num for Youtuber Kind between 1 and 4 : ");
 			}
 		}
 	}

@@ -11,8 +11,20 @@ public class Youtuber {
 
 	public Youtuber() {
 	}
+	
+	public Youtuber(YoutuberKind kind) {
+		this.kind=kind;
+	}
 
 	public Youtuber(String name, int id, int subscribernum, String link) {
+		this.name=name;
+		this.id=id;
+		this.subscribernum=subscribernum; 
+		this.link=link;
+	}
+	
+	public Youtuber(YoutuberKind kind, String name, int id, int subscribernum, String link) {
+		this.kind=kind;
 		this.name=name;
 		this.id=id;
 		this.subscribernum=subscribernum; 
@@ -58,10 +70,26 @@ public class Youtuber {
 	public void setLink(String link) {
 		this.link = link;
 	}
-
-
+	
+	
 	public void printInfo() {
-		System.out.println("name:"+name+"id:"+id+"subscriber num:"+subscribernum+"link:"+link);
+		String skind = "none";
+		switch(this.kind) {
+		case Vlog:
+			skind="Vlog";
+			break;
+		case Music:
+			skind="Music";
+			break;
+		case Game:
+			skind="Game";
+			break;
+		case Travel:
+			skind="Travel";
+			break;
+		default:
+		}
+		System.out.println("kind : "+skind+" name: "+name+" id: "+id+" subscriber num: "+subscribernum+" link: "+link);
 	}
 
 	public void getUserInput(Scanner input) {
