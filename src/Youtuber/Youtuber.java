@@ -2,7 +2,7 @@ package Youtuber;
 
 import java.util.Scanner;
 
-public class Youtuber {
+public abstract class  Youtuber implements YoutuberInput {
 	protected YoutuberKind kind=YoutuberKind.Music;
 	protected String name;
 	protected int id;
@@ -15,7 +15,7 @@ public class Youtuber {
 	public Youtuber(YoutuberKind kind) {
 		this.kind=kind;
 	}
-
+	
 	public Youtuber(String name, int id, int subscribernum, String link) {
 		this.name=name;
 		this.id=id;
@@ -71,8 +71,33 @@ public class Youtuber {
 		this.link = link;
 	}
 	
+	public abstract void printInfo();
 	
-	public void printInfo() {
+	public void setYoutuberID(Scanner input) {
+		System.out.print("Youtuber ID:");
+		int id=input.nextInt();
+		this.setId(id);
+	}
+
+	public void setYoutuberName(Scanner input) {
+		System.out.print("Youtuber name:");
+		String name=input.next();	
+		this.setName(name);
+	}
+
+	public void setYoutuberSub(Scanner input) {
+		System.out.print("Amazing! Youtuber Subscriber number:");
+		int subscribernum=input.nextInt();	
+		this.setSubscribernum(subscribernum);
+	}
+
+	public void setYoutuberLink(Scanner input) {
+		System.out.print("Youtuber Link:");
+		String link=input.next();
+		this.setLink(link);
+	}
+	
+	public String getKindString(){
 		String skind = "none";
 		switch(this.kind) {
 		case Vlog:
@@ -89,24 +114,6 @@ public class Youtuber {
 			break;
 		default:
 		}
-		System.out.println("kind : "+skind+" name: "+name+" id: "+id+" subscriber num: "+subscribernum+" link: "+link);
-	}
-
-	public void getUserInput(Scanner input) {
-		System.out.print("Youtuber ID:");
-		int id=input.nextInt();
-		this.setId(id);
-
-		System.out.print("Youtuber name:");
-		String name=input.next();
-		this.setName(name);
-
-		System.out.print("Youtuber Subscriber number :");
-		int subscribernum=input.nextInt();
-		this.setSubscribernum(subscribernum);
-
-		System.out.print("Youtuber Link:");
-		String link=input.next();
-		this.setLink(link);
+		return skind;
 	}
 }
