@@ -24,8 +24,7 @@ public class TravelYoutuber extends CommonYoutuber{
 		setYoutuberTravelTypewithYN(input);
 		setYoutuberLink(input);
 	}
-	
-	
+
 	public void setYoutuberTravelTypewithYN(Scanner input) {
 		char answer='x';
 		while(answer!='y' && answer!='Y'&&answer!='n' && answer!='N') {

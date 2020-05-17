@@ -25,7 +25,7 @@ public class GameYoutuber extends CommonYoutuber{
 		setYoutuberGamekindwithYN(input);
 		setYoutuberLink(input);
 	}
-	
+
 	public void setYoutuberGamekindwithYN(Scanner input) {
 		char answer='x';
 		while(answer!='y' && answer!='Y'&&answer!='n' && answer!='N') {

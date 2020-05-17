@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Youtuber.GameYoutuber;
@@ -19,41 +20,51 @@ public class YoutuberManager {
 	public void addYoutuber() {
 		int kind=0;
 		YoutuberInput youtuberInput;
-		while(kind!=1&&kind!=2&&kind!=3&&kind!=4) {
-			System.out.println("1 for Vlog");
-			System.out.println("2 for Music");
-			System.out.println("3 for Game");
-			System.out.println("4 for Travel");
-			System.out.println("Select num for Youtuber Kind between 1 and 2 : ");
-			kind=input.nextInt();
-			if(kind==1) {
-				youtuberInput=new VlogYoutuber(YoutuberKind.Vlog);
-				youtuberInput.getUserInput(input);
-				youtubers.add(youtuberInput);
-				break;
-			}
-			else if(kind==2) {
-				youtuberInput=new MusicYoutuber(YoutuberKind.Music);
-				youtuberInput.getUserInput(input);
-				youtubers.add(youtuberInput);
-				break;
-			}
+		while(kind<1||kind>4) {
+			try {
+				System.out.println("go into add youtubers in while");
+				System.out.println("1 for Vlog");
+				System.out.println("2 for Music");
+				System.out.println("3 for Game");
+				System.out.println("4 for Travel");
+				System.out.println("Select num for Youtuber Kind between 1 and 4 : ");
+				kind=input.nextInt();
+				if(kind==1) {
+					youtuberInput=new VlogYoutuber(YoutuberKind.Vlog);
+					youtuberInput.getUserInput(input);
+					youtubers.add(youtuberInput);
+					break;
+				}
+				else if(kind==2) {
+					youtuberInput=new MusicYoutuber(YoutuberKind.Music);
+					youtuberInput.getUserInput(input);
+					youtubers.add(youtuberInput);
+					break;
+				}
 
-			else if(kind==3) {
-				youtuberInput=new GameYoutuber(YoutuberKind.Game);
-				youtuberInput.getUserInput(input);
-				youtubers.add(youtuberInput);
-				break;
-			}
+				else if(kind==3) {
+					youtuberInput=new GameYoutuber(YoutuberKind.Game);
+					youtuberInput.getUserInput(input);
+					youtubers.add(youtuberInput);
+					break;
+				}
 
-			else if(kind==4) {
-				youtuberInput=new TravelYoutuber(YoutuberKind.Travel);
-				youtuberInput.getUserInput(input);
-				youtubers.add(youtuberInput);
-				break;
+				else if(kind==4) {
+					youtuberInput=new TravelYoutuber(YoutuberKind.Travel);
+					youtuberInput.getUserInput(input);
+					youtubers.add(youtuberInput);
+					break;
+				}
+				else {
+					System.out.print("Select num for Youtuber Kind between 1 and 4 : ");
+				}
 			}
-			else {
-				System.out.print("Select num for Youtuber Kind between 1 and 4 : ");
+			catch(InputMismatchException e) {
+				System.out.println("Please put an integer between 1 and 4!");
+				if(input.hasNext()) {
+					input.next();
+				}
+				kind=-1;
 			}
 		}
 	}
@@ -64,7 +75,7 @@ public class YoutuberManager {
 		int index=findIndex(youtuberId);
 		removefromYoutubers(index, youtuberId);
 	}
-	
+
 	public int findIndex(int youtuberId) {
 		int index=-1;
 		for(int i = 0; i<youtubers.size(); i++) {
@@ -75,7 +86,7 @@ public class YoutuberManager {
 		}
 		return index;
 	}
-	
+
 	public int removefromYoutubers(int index, int youtuberId) {
 		if(index>=0) {
 			youtubers.remove(index);
@@ -127,8 +138,6 @@ public class YoutuberManager {
 			youtubers.get(i).printInfo();
 		}
 	}
-
-
 
 	public void showEditMenu() {
 		System.out.println("*** Youtuber Info Edit Menu ***");

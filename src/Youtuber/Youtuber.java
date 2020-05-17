@@ -2,6 +2,8 @@ package Youtuber;
 
 import java.util.Scanner;
 
+import exceptions.LinkFormatException;
+
 public abstract class  Youtuber implements YoutuberInput {
 	protected YoutuberKind kind=YoutuberKind.Music;
 	protected String name;
@@ -11,18 +13,18 @@ public abstract class  Youtuber implements YoutuberInput {
 
 	public Youtuber() {
 	}
-	
+
 	public Youtuber(YoutuberKind kind) {
 		this.kind=kind;
 	}
-	
+
 	public Youtuber(String name, int id, int subscribernum, String link) {
 		this.name=name;
 		this.id=id;
 		this.subscribernum=subscribernum; 
 		this.link=link;
 	}
-	
+
 	public Youtuber(YoutuberKind kind, String name, int id, int subscribernum, String link) {
 		this.kind=kind;
 		this.name=name;
@@ -67,12 +69,15 @@ public abstract class  Youtuber implements YoutuberInput {
 		return link;
 	}
 
-	public void setLink(String link) {
+	public void setLink(String link) throws LinkFormatException{
+		if(!link.contains("www.youtube.com")&&!link.equals("")) {
+			throw new LinkFormatException();
+		}
 		this.link = link;
 	}
-	
+
 	public abstract void printInfo();
-	
+
 	public void setYoutuberID(Scanner input) {
 		System.out.print("Youtuber ID:");
 		int id=input.nextInt();
@@ -92,11 +97,18 @@ public abstract class  Youtuber implements YoutuberInput {
 	}
 
 	public void setYoutuberLink(Scanner input) {
-		System.out.print("Youtuber Link:");
-		String link=input.next();
-		this.setLink(link);
+		String link="";
+		while(!link.contains("www.youtube.com")){
+			System.out.print("Youtuber Link:");
+			link=input.next();
+			try {
+				this.setLink(link);
+			} catch (LinkFormatException e) {
+				System.out.println("Incorrect Link Format. put the link that contains www.youtube.com");
+			}
+		}
 	}
-	
+
 	public String getKindString(){
 		String skind = "none";
 		switch(this.kind) {
