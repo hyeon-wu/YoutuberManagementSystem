@@ -35,7 +35,7 @@ public abstract class CommonYoutuber extends Youtuber {
 				if(input.hasNext()) {
 					input.next();
 				}
-				answer='y';
+				answer='x';
 			}
 		}
 	}
