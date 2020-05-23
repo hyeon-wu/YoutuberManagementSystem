@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -6,17 +7,23 @@ import Youtuber.GameYoutuber;
 import Youtuber.MusicYoutuber;
 import Youtuber.TravelYoutuber;
 import Youtuber.VlogYoutuber;
-import Youtuber.Youtuber;
 import Youtuber.YoutuberInput;
 import Youtuber.YoutuberKind;
 
-public class YoutuberManager {
+public class YoutuberManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 370946218060404709L;
+	
 	ArrayList<YoutuberInput> youtubers=new ArrayList<YoutuberInput>();
-	Scanner input;
+	transient Scanner input;
 	YoutuberManager(Scanner input){
 		this.input=input;
 	}
-
+	public void setScanner(Scanner input) {
+		this.input=input;
+	}
 	public void addYoutuber() {
 		int kind=0;
 		YoutuberInput youtuberInput;

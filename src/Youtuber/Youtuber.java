@@ -1,10 +1,15 @@
 package Youtuber;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exceptions.LinkFormatException;
 
-public abstract class  Youtuber implements YoutuberInput {
+public abstract class  Youtuber implements YoutuberInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -386430640353888159L;
 	protected YoutuberKind kind=YoutuberKind.Music;
 	protected String name;
 	protected int id;
