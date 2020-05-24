@@ -15,7 +15,7 @@ public class YoutuberManager implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 370946218060404709L;
-	
+
 	ArrayList<YoutuberInput> youtubers=new ArrayList<YoutuberInput>();
 	transient Scanner input;
 	YoutuberManager(Scanner input){
@@ -156,4 +156,3 @@ public class YoutuberManager implements Serializable{
 		System.out.println("Select one number between 1 - 6:");
 	}
 }
-

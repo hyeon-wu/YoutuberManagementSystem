@@ -14,8 +14,7 @@ public class MenuManager{
 	static EventLogger logger=new EventLogger("log.txt");
 
 	public static void main(String[]args) {
-		
-		
+
 		Scanner input=new Scanner(System.in);
 		YoutuberManager youtuberManager=getObject("youtubermanager.ser");			
 		if(youtuberManager==null) {
@@ -49,7 +48,7 @@ public class MenuManager{
 					break;
 				case 4:
 					youtuberManager.viewYoutubers();
-					logger.log("edit a list of Youtuber");
+					logger.log("view a list of Youtuber");
 					break;
 				default:
 					continue;
@@ -76,7 +75,7 @@ public class MenuManager{
 	}
 	public static YoutuberManager getObject(String filename) {
 		YoutuberManager youtuberManager=null;
-		
+
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in=new ObjectInputStream(file);
@@ -94,7 +93,7 @@ public class MenuManager{
 		}
 		return youtuberManager;
 	}
-	
+
 	public static void putObject(YoutuberManager youtuberManager, String filename) {
 		try {
 			FileOutputStream file = new FileOutputStream(filename);
@@ -111,10 +110,3 @@ public class MenuManager{
 		}
 	}
 }
-
-
-
-
-
-
-

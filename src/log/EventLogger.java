@@ -21,13 +21,11 @@ public class EventLogger {
 			filehandler.setFormatter(new SimpleFormatter());
 			logger.addHandler(filehandler);
 		} catch (IOException e) {
-			
 			e.printStackTrace();
 		}	
 	}
-	
+
 	public void log(String logMessage) {
 		logger.info(logMessage);
 	}
-
 }
