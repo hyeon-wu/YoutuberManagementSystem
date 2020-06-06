@@ -14,13 +14,10 @@ public class ButtonAddListener implements ActionListener {
 	public ButtonAddListener(WindowFrame frame) {
 		this.frame=frame;
 	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton b=(JButton)e.getSource();
 		YoutuberAdder adder=frame.getYoutuberadder();
 		frame.setupPanel(adder);
-
 	}
-
 }

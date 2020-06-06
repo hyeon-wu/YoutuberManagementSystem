@@ -17,9 +17,7 @@ public class MenuSelection extends JPanel{
 		this.setLayout(new BorderLayout());
 		JPanel panel1=new JPanel();
 		JPanel panel2=new JPanel();
-
 		JLabel label=new JLabel("Menu Selection");
-
 		JButton button1=new JButton("Add Youtuber");
 		JButton button2=new JButton("View Youtuber");
 		JButton button3=new JButton("Edit Youtuber");
@@ -37,6 +35,5 @@ public class MenuSelection extends JPanel{
 
 		this.add(panel1, BorderLayout.NORTH);
 		this.add(panel2, BorderLayout.CENTER);
-		
 	}
 }

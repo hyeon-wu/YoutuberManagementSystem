@@ -43,8 +43,6 @@ public class YoutuberAdder extends JPanel {
 
 		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6);
 
-	
-
 		this.add(panel);
 		this.setVisible(true);
 	}
