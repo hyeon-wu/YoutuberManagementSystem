@@ -1,3 +1,4 @@
+package manager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -8,6 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager{
@@ -23,6 +25,7 @@ public class MenuManager{
 		else {
 			youtuberManager.setScanner(input);
 		}
+		WindowFrame frame=new WindowFrame(youtuberManager);
 		selectMenu(input, youtuberManager);
 		putObject(youtuberManager, "youtubermanager.ser");
 	}

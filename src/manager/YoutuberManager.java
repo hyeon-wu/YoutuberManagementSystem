@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -7,6 +8,7 @@ import Youtuber.GameYoutuber;
 import Youtuber.MusicYoutuber;
 import Youtuber.TravelYoutuber;
 import Youtuber.VlogYoutuber;
+import Youtuber.Youtuber;
 import Youtuber.YoutuberInput;
 import Youtuber.YoutuberKind;
 
@@ -145,7 +147,14 @@ public class YoutuberManager implements Serializable{
 			youtubers.get(i).printInfo();
 		}
 	}
-
+	
+	public int size() {
+		return youtubers.size();
+	}
+	
+	public YoutuberInput get(int index) {
+		return (Youtuber) youtubers.get(index);
+	}
 	public void showEditMenu() {
 		System.out.println("*** Youtuber Info Edit Menu ***");
 		System.out.println(" 1. Edit Id");

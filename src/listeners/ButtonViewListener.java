@@ -15,8 +15,9 @@ public class ButtonViewListener implements ActionListener {
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JButton b=(JButton)e.getSource();
-		YoutuberViewer viewer=frame.getYoutuberviewer();
-		frame.setupPanel(viewer);
+		frame.getContentPane().removeAll();
+		frame.getContentPane().add(frame.getYoutuberviewer());
+		frame.revalidate();
+		frame.repaint();
 	}
 }

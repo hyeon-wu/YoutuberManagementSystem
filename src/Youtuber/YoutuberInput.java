@@ -9,11 +9,17 @@ public interface YoutuberInput {
 	public int getId();
 
 	public void setId(int id);
-
+	
+	public String getName();
+	
 	public void setName(String name);
-
+	
+	public int getSubscribernum();
+	
 	public void setSubscribernum(int subscribernum);
-
+	
+	public String getLink();
+	
 	public void setLink(String link) throws LinkFormatException;
 
 	public void getUserInput(Scanner input);

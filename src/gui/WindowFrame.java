@@ -3,36 +3,36 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class WindowFrame extends JFrame{
+import manager.YoutuberManager;
 
-	WindowFrame frame;
-	MenuSelection menuselection;
+public class WindowFrame extends JFrame{
+	
+	YoutuberManager youtuberManager;
+	MenuSelection menuSelection;
 	YoutuberAdder youtuberadder;
 	YoutuberViewer youtuberviewer;
-
-	public WindowFrame() {
-		this.menuselection=new MenuSelection(this);
-		this.youtuberadder=new YoutuberAdder(this);
-		this.youtuberviewer=new YoutuberViewer(this);
+	
+	public WindowFrame(YoutuberManager youtuberManager) {
 		this.setSize(500, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setupPanel(menuselection);
+		this.setTitle("My Frame");
+		
+		this.youtuberManager=youtuberManager;
+		menuSelection=new MenuSelection(this);
+		youtuberadder=new YoutuberAdder(this);
+		youtuberviewer=new YoutuberViewer(this, this.youtuberManager);
+		
+		
+		this.add(menuSelection);
 		this.setVisible(true);
 	}
 
-	public void setupPanel(JPanel panel) {
-		this.getContentPane().removeAll();
-		this.getContentPane().add(panel);
-		this.revalidate();
-		this.repaint();
-	}
-
 	public MenuSelection getMenuselection() {
-		return menuselection;
+		return menuSelection;
 	}
 
 	public void setMenuselection(MenuSelection menuselection) {
-		this.menuselection = menuselection;
+		this.menuSelection = menuselection;
 	}
 
 	public YoutuberAdder getYoutuberadder() {
