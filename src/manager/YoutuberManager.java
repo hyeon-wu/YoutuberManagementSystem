@@ -147,11 +147,11 @@ public class YoutuberManager implements Serializable{
 			youtubers.get(i).printInfo();
 		}
 	}
-	
+
 	public int size() {
 		return youtubers.size();
 	}
-	
+
 	public YoutuberInput get(int index) {
 		return (Youtuber) youtubers.get(index);
 	}

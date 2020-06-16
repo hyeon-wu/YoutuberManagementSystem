@@ -12,11 +12,11 @@ import Youtuber.YoutuberInput;
 import manager.YoutuberManager;
 
 public class YoutuberViewer extends JPanel{
-	
+
 	WindowFrame frame;
-	
+
 	YoutuberManager youtuberManager;
-	
+
 	public YoutuberViewer(WindowFrame frame, YoutuberManager youtuberManager) {
 		this.frame=frame;
 		this.youtuberManager=youtuberManager;
@@ -26,7 +26,7 @@ public class YoutuberViewer extends JPanel{
 		model.addColumn("Name");
 		model.addColumn("Subscriber num");
 		model.addColumn("Link");
-		
+
 		for(int i=0; i<youtuberManager.size(); i++) {
 			Vector row=new Vector();
 			YoutuberInput yi=youtuberManager.get(i);
