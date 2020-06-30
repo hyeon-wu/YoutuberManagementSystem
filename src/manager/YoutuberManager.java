@@ -26,6 +26,17 @@ public class YoutuberManager implements Serializable{
 	public void setScanner(Scanner input) {
 		this.input=input;
 	}
+	
+	public void addYoutuber(String id, String name, String sub, String link) {
+		YoutuberInput youtuberInput=new VlogYoutuber(YoutuberKind.Vlog);
+		youtuberInput.getUserInput(input);
+		youtubers.add(youtuberInput);
+	}
+	
+	public void addYoutuber(YoutuberInput youtuberInput) {
+		youtubers.add(youtuberInput);
+	}
+	
 	public void addYoutuber() {
 		int kind=0;
 		YoutuberInput youtuberInput;

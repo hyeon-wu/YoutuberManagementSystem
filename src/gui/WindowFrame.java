@@ -8,6 +8,7 @@ import manager.YoutuberManager;
 public class WindowFrame extends JFrame{
 
 	YoutuberManager youtuberManager;
+	
 	MenuSelection menuSelection;
 	YoutuberAdder youtuberadder;
 	YoutuberViewer youtuberviewer;
@@ -19,7 +20,7 @@ public class WindowFrame extends JFrame{
 
 		this.youtuberManager=youtuberManager;
 		menuSelection=new MenuSelection(this);
-		youtuberadder=new YoutuberAdder(this);
+		youtuberadder=new YoutuberAdder(this, this.youtuberManager);
 		youtuberviewer=new YoutuberViewer(this, this.youtuberManager);
 
 		this.add(menuSelection);

@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import listeners.ButtonAddListener;
-import listeners.ButtonViewListener;
+import event.ButtonAdderListener;
+import event.ButtonViewerListener;
 
 public class MenuSelection extends JPanel{
 	WindowFrame frame;
@@ -23,8 +23,9 @@ public class MenuSelection extends JPanel{
 		JButton button3=new JButton("Edit Youtuber");
 		JButton button4=new JButton("Delete Youtuber");
 		JButton button5=new JButton("Exit Program");
-		button1.addActionListener(new ButtonAddListener(frame));
-		button2.addActionListener(new ButtonViewListener(frame));
+		
+		button1.addActionListener(new ButtonAdderListener(frame));
+		button2.addActionListener(new ButtonViewerListener(frame));
 
 		panel1.add(label);
 		panel2.add(button1);

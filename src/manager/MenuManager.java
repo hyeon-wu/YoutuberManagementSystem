@@ -78,7 +78,6 @@ public class MenuManager{
 	}
 	public static YoutuberManager getObject(String filename) {
 		YoutuberManager youtuberManager=null;
-
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in=new ObjectInputStream(file);

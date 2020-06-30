@@ -7,10 +7,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import event.YoutuberAdderCancleListener;
+import event.YoutuberAdderListener;
+import manager.YoutuberManager;
+
 public class YoutuberAdder extends JPanel {
+	
 	WindowFrame frame;
-	public YoutuberAdder(WindowFrame frame) {
+	YoutuberManager youtuberManager;
+	
+	public YoutuberAdder(WindowFrame frame, YoutuberManager youtuberManager) {
 		this.frame=frame;
+		this.youtuberManager=youtuberManager;
+		
 		JPanel panel=new JPanel();
 		panel.setLayout(new SpringLayout());
 
@@ -35,11 +44,17 @@ public class YoutuberAdder extends JPanel {
 		JLabel labelLink=new JLabel("Link: ", JLabel.TRAILING);
 		JTextField fieldLink=new JTextField(10);
 		labelLink.setLabelFor(fieldLink);
+		
+		JButton saveButton=new JButton("save");
+		saveButton.addActionListener(new YoutuberAdderListener(fieldID, fieldName, fieldSub, fieldLink, youtuberManager));
+		
+		JButton cancleButton=new JButton("cancle");
+		cancleButton.addActionListener(new YoutuberAdderCancleListener(frame));
 		panel.add(labelLink);
 		panel.add(fieldLink);
 
-		panel.add(new JButton("save"));
-		panel.add(new JButton("cancel"));
+		panel.add(saveButton);
+		panel.add(cancleButton);
 
 		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6);
 
